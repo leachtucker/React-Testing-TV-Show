@@ -15,6 +15,7 @@ test('renders show data from API', async () => {
 
     // ASSERT
     await waitFor(() => expect(getAllByText(/stranger things/i)));
+    expect(mockFetchShow).toHaveBeenCalled();
 });
 
 const showData = {
