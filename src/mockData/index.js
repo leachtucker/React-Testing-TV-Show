@@ -1,8 +1,4 @@
-import React from 'react';
-import { render, waitFor } from '@testing-library/react';
-import Episodes from './Episodes';
-
-const showData = {
+export const showData = {
     id: 2993,
     url: 'http://www.tvmaze.com/shows/2993/stranger-things',
     name: 'Stranger Things',
@@ -665,12 +661,3 @@ const showData = {
     }
 };
 
-const episode1 = showData._embedded.episodes[0];
-
-test('renders episodes from the provided episode data', async () => {
-    // ARRANGE & ACT
-    const { getByText } = render(<Episodes episodes={showData._embedded.episodes} />);
-
-    // ASSERT
-    await waitFor(() => expect(getByText(episode1.name)));
-});
